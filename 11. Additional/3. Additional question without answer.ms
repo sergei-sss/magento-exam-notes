@@ -1,0 +1,195 @@
+## Applying the shopping cart rule's action affects the quote item by setting the quote item's
+
+1. base_row_total and cow_total properties with the discounted price
+2. base_price_incl_tax and price_incl_tax properties with the discounted price
+3. base_price and price properties with the discounted price
+4. base_discount_amount and discount_amount with the discount applied to the original price
+
+**Answer:** 3
+
+
+## What are necessary steps to create 1 module payment in Magento? (3 answers)
+
+1. Create resource model payment
+2. Create model payment
+3. Declare payment method in xpath config/default/payment
+4. Declare configuration in etc/system.xml
+5. Create controller
+
+**Answer:**  3,4,2
+
+## To change the checkout mode form GUEST to REGISTER and vice versa,  which event is needed?
+
+1. checkout_allow_guest
+2. is_allowed_guest_checkout
+3. is_allowed_register_checkout
+4. change_checkout_method
+
+## How to set order for a magento collection?(Choose 2)
+
+1. $coll->getSelect()->order(‘entity_id desc’);
+2. $coll->setOrder(‘entity_id desc’);
+3. $coll->getSelect()->order(‘entity_id’,’desc’);
+4. $coll->setOrder(‘entity_id’,'desc’);
+
+
+## Which table to store the relationship data between configurable product and it’s simple product?
+
+1. catalog_product_relation table
+2. Both table catalog_product_superlink and catalog_product_relation
+3. catalog_product_link table
+4. catalog_product_superlink table
+
+
+## How to change sort function for columns in grid magento in admin?
+
+1. Create renderer for the column you want to rewrite
+2. Rewrite function_setCollectionOrder for block grid
+3. Rewrite \_prepareCollection for block grid
+4. Override template of the grid
+
+## The order to call function in grid block
+
+1. \_prepareColumns
+2. \_prepareMassaction
+3. \_prepareCollection
+
+## What is the declarative statement in config file  for overriding block catalog/product_list?
+
+1. catalog_product/rewrite/list
+2. catalog/rewrite/product/list
+3. catalog/product_list/rewrite
+4. catalog/rewrite/product_list
+
+## Choose the correct function to edit getURL customer in grid files in admin
+
+1. $this->getUrl(' customeradmin/customer/edit', array('id' => $row->getId()));
+2. None of them is correct.
+3. $this->getUrl('adminhtml/customer/edit', array('id' => $row->getId()));
+4. $this->getUrl('admin/customer/edit', array('id' => $row->getId()));
+
+## Do display a custom total in order page view in frontend, what do we do? ( Choose 2 options)
+
+1. Write collect and fetch method for model total declared in config
+2. Declare invoice total model in configuration file ( config.xml) of the module
+3. Write method init Totals for block declared from layout.
+4. Declare model total in configuration file of the module
+5. Add layout to handle sales_order_view for model total declared in config
+
+## How to change default length of Increment ID for orders?
+
+1. $entity = Mage::getModel(‘eav/entity_type_order’); $entityType->setIncrementPadLength(12)->save();
+2. $entityType = Mage::getModel('eav/entity_type')->loadByCode('order'); $entityType->setIncrementPadLength(12)->save();
+3. $entity = Mage::getModel(‘eav/entity_type’)->setType(‘order’); $entityType->setIncrementPadLength(12)->save();
+
+
+
+## How to get current url with and without parameters?
+
+1. $currentUrl = $this->helper('core/url')->getCurrentUrl();
+2. $currentUrl = $this->getBaseUrl();
+3. $request = $this->getRequest();
+4. $ currentUrl = Mage::getBaseUrl(array(‘params’=>false))
+
+## What is the difference between grand_total and base_grand_total?
+
+1. base_grand_total is calculated when submitting orders, while grand_total is calculated when closing orders.
+2. base_grand_total is calculated based on the base currency, while grand_total is calculated based on the currency of the website's location where orders are submitted.
+3. base_grand_total is calculated before tax, while grand_total is calculated after tax.
+4. base_grand_total is calculated in USD, while grand_total is calculated in other foreign currencies.
+
+## How to redirect to another url from observer(Varien_Event_Observer $observer) file?
+
+1. $this->redirect($url)
+2. $this->getRequest()->redirect($url)
+3. $observer->getRequest()->setParam(‘return_url’, $url)
+4. $observer->redirectUrl($url)
+
+## You want your module to set some data on the shopping cart item when a product is added to the cart on the frontend. Which event can be used regardless of how the product is added to the cart (from wishlist, through quote merge, etc.)
+
+1. sales_quote_add_item
+2. checkout_cart_add_product_complete
+3. checkout_cart_product_add_after
+4. checkout_cart_save_before
+
+## Which tags are used to declare an event?(Choose 3 options among the followings)
+
+1. frontend
+2. global
+3. admin
+4. default
+5. adminhtml
+6. crontab
+
+## When installing a new module ( there is version 0.2.0, which files are run? (there are 2 correct answers)
+
+1. mysql4-upgrade-0.1.0-0.2.0.php
+2. mysql4-install-0.1.3.php
+3. mysql4-install-0.1.0.php
+4. mysql4-upgrade-0.1.3-0.2.0.php
+5. mysql4-upgrade-0.1.0-0.1.3.php
+
+## To add a total to reduce product price on page Shopping Cart, what do we do? ( 2 answers)
+
+1.	Add Model that is correspondent to the configuration in config.xml, model with collect and fetch method.
+2.	Add config total in file config.xml under xpath is config/global/sales/quote/totals
+3.	Add config total in file config.xml under xpath is config/global/sales/order_invoice/totals
+4.	Add code in to layout file with handle is sales_order_view
+5.	Add Block that is correspondent to the configuration in config.xml, block with method initTotals
+
+## Which of the followings will enable logging via calls to debugData() on a native Magento payment method model?
+
+1. Set the config node default/payment/[method code]/debug to 1
+2. Call setDebug(true) on the payment method model
+3. Set the config node default/payment/debug/ [method code] to 1
+4. Call Mage::register ('payment_method_debug_' . [method code], true)
+5. Set the protected property $\_debug of the payment model to true
+
+## Which one of the following class types directly charges a credit card when capturing an invoice in Magento admin?
+
+1. payment_method
+2. Payment
+3. Invoice
+4. Order
+
+## What is purpose of the following code (in file config.xml)? ( Choose 1 option)
+
+
+    <global>
+        <fieldsets>
+            <sales_convert_quote_address>
+                <base_discount>
+                    <to_order>*</to_order>
+                </base_discount>
+            </sales_convert_quote_address>
+        </fieldsets>
+    </global>
+
+1. Create field base_discount for quote_address và order
+2. Transfer data of field base_discount from quote address to order when creating an order
+3. Transfer field base_discount from quote address to order in database
+4. Transfer data of field base_discount field from order to address when creating an order
+5. Transfer data of field base_discount from quote to order when a customer orders.
+
+## Which tags below are NOT used in declaring XML layout? (2 correct answers)
+
+1. action
+2. update
+3. handle
+4. template
+5. block
+
+## To display formatted like the following example: "Aug 30, 2013" , choose the date of the following format:
+
+1. Mage_Core_Model_Locale :: FORMAT_TYPE_SHORT
+2. Mage_Core_Model_Locale :: FORMAT_TYPE_MEDIUM
+3. Mage_Core_Model_Locale :: FORMAT_TYPE_FULL
+4. Mage_Core_Model_Locale :: FORMAT_TYPE_LONG
+
+
+## How to get product collection which IDs are in array(16,17,18,20) ?
+
+1. $collection->addFieldToFilter(‘id’, array(16,17,18,19));
+2. $collection->addFieldToFilter(‘entity_id’=>array(‘in’=>array(16,17,18,19)))
+3. $collection->addIdToFilter(array(16,17,18,19));
+4. $collection->addFieldToFilter(‘entity_id’=>array(‘gt’=>16,’lt’=>’19’))
